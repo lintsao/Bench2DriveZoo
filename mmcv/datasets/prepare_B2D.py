@@ -13,8 +13,8 @@ import argparse
 # camera coordinate system, and lidar coordinate system) to the right-handed coordinate system
 # consistent with the nuscenes dataset.
 
-DATAROOT = '../../data/bench2drive'
-MAP_ROOT = '../../data/bench2drive/maps'
+DATAROOT = '../../data/Bench2Drive-mini'
+MAP_ROOT = '../../data/Bench2Drive-mini/maps'
 OUT_DIR = '../../data/infos'
 
 MAX_DISTANCE = 75              # Filter bounding boxes that are too far from the vehicle
@@ -384,7 +384,7 @@ if __name__ == "__main__":
     args = argparser.parse_args()    
     workers = args.workers
     process_list = []
-    with open('../../data/splits/bench2drive_base_train_val_split.json','r') as f:
+    with open('../../data/splits/bench2drive_mini_train_val_split.json','r') as f:
         train_val_split = json.load(f)
         
     all_folder = os.listdir(join(DATAROOT,'v1'))

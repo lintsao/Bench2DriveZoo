@@ -158,3 +158,8 @@ pyrightconfig.json
 tmp_ckpts/
 val/
 *.ipynb
+
+# Data directories
+data/bench2drive/
+data/Bench2Drive-mini/
+data/infos/
