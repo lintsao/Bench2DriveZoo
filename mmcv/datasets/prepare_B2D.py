@@ -146,7 +146,8 @@ def get_action(index):
 
 def gengrate_map(map_root):
     map_infos = {}
-    for file_name in os.listdir(map_root):
+    file_list = [f for f in os.listdir(map_root) if f.endswith('.npz')]
+    for file_name in tqdm(file_list, desc='[maps] parsing npz'):
         if '.npz' in file_name:
             map_info = dict(np.load(join(map_root,file_name), allow_pickle=True)['arr'])
             town_name = file_name.split('_')[0]
@@ -367,7 +368,7 @@ def generate_infos(folder_list,workers,train_or_val,tmp_dir):
     for i in range(workers):
         process_list[i].join()
     union_data = []
-    for i in range(workers):
+    for i in tqdm(range(workers), desc=f'[infos:{train_or_val}] merging'):
         with open(join(OUT_DIR,tmp_dir,'b2d_infos_'+train_or_val+'_'+str(i)+'.pkl'),'rb') as f:
             data = pickle.load(f)
         union_data.extend(data)
