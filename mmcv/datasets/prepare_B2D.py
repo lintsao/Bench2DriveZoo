@@ -13,8 +13,8 @@ import argparse
 # camera coordinate system, and lidar coordinate system) to the right-handed coordinate system
 # consistent with the nuscenes dataset.
 
-DATAROOT = '../../data/Bench2Drive-mini'
-MAP_ROOT = '../../data/Bench2Drive-mini/maps'
+DATAROOT = '../../data/bench2drive-mini'
+MAP_ROOT = '../../data/bench2drive-mini/maps'
 OUT_DIR = '../../data/infos'
 
 MAX_DISTANCE = 75              # Filter bounding boxes that are too far from the vehicle
